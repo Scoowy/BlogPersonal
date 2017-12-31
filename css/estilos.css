@@ -1,0 +1,179 @@
+* {
+	-webkit-box-sizing: border-box !important;
+	-moz-box-sizing: border-box !important;
+	box-sizing: border-box !important;
+}
+body {
+	background: url(../img/FondoMontanas.png) !important;
+	background-attachment: fixed !important;
+}
+/* banners propios */
+
+#bannerP, #bannerG {
+	background-color: rgba(255,255,255,0.90);
+	padding: 30px;
+	/*	font-size: 1.25em;*/
+	border-radius: 3px;
+	max-height: 500px;
+	min-height: 100px;
+	overflow: auto;
+}
+#bannerP h1, #bannerG h1 {
+	text-align: left;
+}
+#separadorCol {
+	height: 30px;
+}
+/* Fin banners propios */
+
+.dropdown-menu {
+	background-color: rgb(27,27,27);
+}
+
+.dropdown-item {
+	color: #919aa1;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#fotoNavBar {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+
+/* panel */
+.panel {
+	background-color: rgba(255,255,255,0.80) !important;
+	padding: 30px;
+}
+/* Fin panel */
+
+.espacioSep {
+	height: 120px !important;
+}
+
+.footer {
+	position: static;
+	bottom: 1;
+	width: 100%;
+	padding: 5px;
+  	/*  height: 60px;*/
+  	/*line-height: 20px;  Vertically center the text there */
+	background-color: #f5f5f5;
+}
+/* Posts Tarjetas */
+
+.contenedor {
+	max-width: 1200px;
+	margin: 50px auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.contenedor_tarjeta {
+	margin: 20px;
+}
+.contenedor_tarjeta a {
+	display: inline-block;
+}
+.contenedor_tarjeta:hover figure {
+	transform: perspective(600px) rotateY(180deg);
+	-webkit-box-shadow: 0px 2px 10px 2px rgba(0,0,0,0.25);
+	-moz-box-shadow: 0px 2px 10px 2px rgba(0,0,0,0.25);
+	box-shadow: 0px 2px 10px 2px rgba(0,0,0,0.25);
+}
+.contenedor_tarjeta:hover figure img {
+/* Si queremos podemos aplicar un efecto blur a nuestra imagen al girar */
+	/*filter:blur(2px);*/
+}
+figure {
+	width: 300px;
+	height: 350px;
+	margin: 0;
+	position: relative;
+	transition: all ease .5s;
+	transform-style: preserve-3d;
+	/* Nota:
+		Establecemos que la imagen tendra una rotacion de 0grados al inicio porque si no
+		ponemos esta propiedad nos da un poco de problemas en algunos navegadores al pasar el cursor.
+	*/
+	transform: perspective(600px) rotateY(0deg);
+	border-radius: 3px;
+}
+figure .frontal, figure .trasera {
+	width: 100%;
+	height: 100%;
+	border-radius: 4px;
+	transition: all ease .5s;
+}
+figure .frontal {
+	display: block;
+	background: #000;/* Podemos ocultar la imagen al dar la vuelta si lo queremos */
+	/*backface-visibility: hidden;*/
+}
+figure .trasera {
+	position: absolute;
+	top: 0;
+	padding: 20px;
+	color: #fff;
+	transform: perspective(600px) rotateY(180deg);
+	backface-visibility: hidden;
+	overflow: auto;
+}
+#tarjetaPy figure .trasera {
+	background: rgb(193,193,193); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(193,193,193,1) 0%, rgba(65,195,131,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(193,193,193,1) 0%, rgba(65,195,131,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(193,193,193,1) 0%, rgba(65,195,131,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c1c1c1', endColorstr='#41c383', GradientType=0 ); /* IE6-9 */
+}
+#tarjetaHTML figure .trasera {
+	background: rgb(214,214,214); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(214,214,214,1) 0%, rgba(81,179,216,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(214,214,214,1) 0%, rgba(81,179,216,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(214,214,214,1) 0%, rgba(81,179,216,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d6d6', endColorstr='#51b3d8', GradientType=0 ); /* IE6-9 */
+}
+#tarjetaPHP figure .trasera {
+	background: rgb(234,157,152); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(234,157,152,1) 0%, rgba(241,71,54,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(234,157,152,1) 0%,rgba(241,71,54,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(234,157,152,1) 0%,rgba(241,71,54,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ea9d98', endColorstr='#f14736',GradientType=0 ); /* IE6-9 */
+}
+
+figure .trasera .titulo {
+	color: #fff;
+	font-weight: normal;
+	margin-bottom: 20px;
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+}
+figure .trasera hr {
+	height: 2px;
+	background: #fff;
+	border: none;
+	margin-bottom: 20px;
+	opacity: .5;
+}
+figure .trasera p {
+	font-family: 'Open Sans', sans-serif;
+	line-height: 22px;
+	font-size: 14px;
+}
+
+@media screen and (max-width: 992px) {
+figure .trasera {
+	/*position: relative;*/
+	backface-visibility: visible;
+	transform: perspective(600px) rotateY(0deg);
+}
+.contenedor_tarjeta:hover figure {
+	transform: perspective(600px) rotateY(0deg);
+}
+}
+
+/* Fin Posts Tarjetas */
