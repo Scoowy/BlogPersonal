@@ -63,7 +63,7 @@ CREATE TABLE entradasProgs (
     texto TEXT CHARACTER SET utf8 NOT NULL,
     imagen TEXT CHARACTER SET utf8 NOT NULL,
     fecha DATETIME NOT NULL,
-    activo TINYINT NOT NULL,
+    activa TINYINT NOT NULL,
     PRIMARY KEY(id),
     FOREIGN KEY(lenguaje_id)
         REFERENCES lenguajeProg(id)
@@ -93,7 +93,7 @@ CREATE TABLE entradasImg (
     imagen TEXT CHARACTER SET utf8 NOT NULL,
     fecha DATETIME NOT NULL,
     ubicacion INT NOT NULL,
-    activo TINYINT NOT NULL,
+    activa TINYINT NOT NULL,
     PRIMARY KEY(id),
     FOREIGN KEY(autor_id)
         REFERENCES usuarios(id)
