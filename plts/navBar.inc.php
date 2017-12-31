@@ -50,7 +50,7 @@ Conexion::cerrarConexion();
                 </li> -->
                 <img class="" id="fotoNavBar" src="<?php echo $_SESSION['foto']; ?>" title="<?php echo ' '.$_SESSION['nombreUsuario']; ?>" data-toggle="tooltip" data-placement="bottom">
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-circle"></i> <?php echo ' ' . $_SESSION['nombreUsuario']; ?> <span class="caret"></span>
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-circle <?php echo $_SESSION['activo'] ?>"></i> <?php echo ' ' . $_SESSION['nombreUsuario']; ?> <span class="caret"></span>
                     </a>
                     <div class="dropdown-menu style="max-width: 100px"> <!-- x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 39px, 0px); top: 0px; left: 0px; will-change: transform;" Todo eso hace recuadro emergente-->
                          <a class="dropdown-item" href="<?php echo RUTAPERFIL ?>"><i class="fas fa-user"></i> Perfil</a>
