@@ -4,7 +4,6 @@ include_once 'app/config.inc.php';
 
 Conexion::abrirConexion();
 $totalUsuarios = RepositorioUsuario::obtenerNumeroUsuarios(Conexion::obtenerConexion());
-Conexion::cerrarConexion();
 ?>
 
 
