@@ -15,5 +15,7 @@ include_once 'plts/docCierre.inc.php';
 ?>
 
 <script>
-    $(function() {$('#linkRepositorio').addClass("active");});
+    $(function () {
+        $('#linkRepositorio').addClass("active");
+    });
 </script>

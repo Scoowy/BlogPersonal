@@ -1,7 +1,7 @@
 <?php
 
 class ControlSesion {
-    
+
     public static function iniciarSesion($idUsuario, $nombreUsuario, $foto, $activo) {
         if (session_id() == '') {
             session_start();
@@ -10,13 +10,13 @@ class ControlSesion {
         $_SESSION['idUsuario'] = $idUsuario;
         $_SESSION['nombreUsuario'] = $nombreUsuario;
         $_SESSION['foto'] = $foto;
-        
+
         if ($activo == '0') {
             $activo = 'text-danger';
         } else {
             $activo = 'text-success';
         }
-        
+
         $_SESSION['activo'] = $activo;
     }
 
