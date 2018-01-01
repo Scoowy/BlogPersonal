@@ -29,4 +29,3 @@
 </head>
 
 <body>
-<!-- ondragstart="return false" onselectstart="return false" oncontextmenu="return false" clases para evitar mover, remarcado y menu de opciones -->
