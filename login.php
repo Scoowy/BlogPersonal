@@ -18,7 +18,7 @@ if (isset($_POST['login'])) {
     if ($validador -> obtenerError() === '' && !is_null($validador -> obtenerUsuario())) {
         // Iniciar sesion
         // Redirigir al usuario a index
-        ControlSesion::iniciarSesion($validador -> obtenerUsuario() -> obtenerId(), $validador -> obtenerUsuario() -> obtenerNombre(), $validador -> obtenerUsuario() -> obtenerFoto());
+        ControlSesion::iniciarSesion($validador -> obtenerUsuario() -> obtenerId(), $validador -> obtenerUsuario() -> obtenerNombre(), $validador -> obtenerUsuario() -> obtenerFoto(), $validador ->obtenerUsuario() -> obtenerActivo());
         Redireccion::redirigir(SERVIDOR);
     } else {
         echo 'Inicio de sesion ERROR';
