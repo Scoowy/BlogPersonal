@@ -15,10 +15,10 @@ if (isset($_POST['login'])) {
 
     $validador = new ValidadorLogin($_POST['email'], $_POST['clave'], Conexion::obtenerConexion());
 
-    if ($validador -> obtenerError() === '' && !is_null($validador -> obtenerUsuario())) {
+    if ($validador->obtenerError() === '' && !is_null($validador->obtenerUsuario())) {
         // Iniciar sesion
         // Redirigir al usuario a index
-        ControlSesion::iniciarSesion($validador -> obtenerUsuario() -> obtenerId(), $validador -> obtenerUsuario() -> obtenerNombre(), $validador -> obtenerUsuario() -> obtenerFoto(), $validador ->obtenerUsuario() -> obtenerActivo());
+        ControlSesion::iniciarSesion($validador->obtenerUsuario()->obtenerId(), $validador->obtenerUsuario()->obtenerNombre(), $validador->obtenerUsuario()->obtenerFoto(), $validador->obtenerUsuario()->obtenerActivo());
         Redireccion::redirigir(SERVIDOR);
     } else {
         echo 'Inicio de sesion ERROR';
@@ -37,7 +37,7 @@ include_once 'plts/navBar.inc.php';
     <dir class="container">
         <div class="row">
             <div class="col-md-3">
-                
+
             </div>
             <div class="col-md-6">
                 <div class="panel panel-default">
@@ -62,7 +62,7 @@ include_once 'plts/navBar.inc.php';
                                 </div>
                                 <?php
                                 if (isset($_POST['login'])) {
-                                    $validador -> mostrarError();
+                                    $validador->mostrarError();
                                 }
                                 ?>
                                 <hr>
@@ -87,5 +87,7 @@ include_once 'plts/docCierre.inc.php';
 ?>
 
 <script>
-    $(function() {$('#linkLogin').addClass("active");});
+    $(function () {
+        $('#linkLogin').addClass("active");
+    });
 </script>

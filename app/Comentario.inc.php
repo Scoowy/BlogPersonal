@@ -8,46 +8,46 @@ class Comentario {
     private $titulo;
     private $texto;
     private $fecha;
-    
+
     function __construct($id, $autorId, $entradaId, $titulo, $texto, $fecha) {
-        $this -> id = $id;
-        $this -> autorId = $autorId;
-        $this -> entradaId = $entradaId;
-        $this -> titulo = $titulo;
-        $this -> texto = $texto;
-        $this -> fecha = $fecha;
+        $this->id = $id;
+        $this->autorId = $autorId;
+        $this->entradaId = $entradaId;
+        $this->titulo = $titulo;
+        $this->texto = $texto;
+        $this->fecha = $fecha;
     }
 
     public function obtenerId() {
-        return $this -> id;
+        return $this->id;
     }
 
     public function obtenerAutorId() {
-        return $this -> autorId;
+        return $this->autorId;
     }
 
     public function obtenerEntradaId() {
-        return $this -> entradaId;
+        return $this->entradaId;
     }
 
     public function obtenerTitulo() {
-        return $this -> titulo;
+        return $this->titulo;
     }
 
     public function obtenerTexto() {
-        return $this -> texto;
+        return $this->texto;
     }
 
     public function obtenerFecha() {
-        return $this -> fecha;
+        return $this->fecha;
     }
 
     public function cambiarTitulo($titulo) {
-        $this -> titulo = $titulo;
+        $this->titulo = $titulo;
     }
 
     public function cambiarTexto($texto) {
-        $this -> texto = $texto;
+        $this->texto = $texto;
     }
 
 }
