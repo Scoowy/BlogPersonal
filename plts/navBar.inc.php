@@ -47,7 +47,7 @@ $totalUsuarios = RepositorioUsuario::obtenerNumeroUsuarios(Conexion::obtenerCone
                                 <i class="fas fa-user"></i>
                         </a>
                 </li> -->
-                <img class="" id="fotoNavBar" src="<?php echo $_SESSION['foto']; ?>" title="<?php echo ' '.$_SESSION['nombreUsuario']; ?>" data-toggle="tooltip" data-placement="bottom">
+                <img class="" id="fotoNavBar" src="<?php echo $_SESSION['foto']; ?>" title="<?php echo ' ' . $_SESSION['nombreUsuario']; ?>" data-toggle="tooltip" data-placement="bottom">
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-circle <?php echo $_SESSION['activo'] ?>"></i> <?php echo ' ' . $_SESSION['nombreUsuario']; ?> <span class="caret"></span>
                     </a>

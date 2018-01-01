@@ -13,9 +13,9 @@ include_once 'app/RepositorioComentario.inc.php';
 
 Conexion::abrirConexion();
 
-for ($usuarios = 0; $usuarios < 100; $usuarios++) { 
+for ($usuarios = 0; $usuarios < 100; $usuarios++) {
     $nombre = sa(10);
-    $email = sa(5).'@'.sa(3);
+    $email = sa(5) . '@' . sa(3);
     $password = password_hash('123456', PASSWORD_DEFAULT);
     $foto = 'img/usuario.png';
 
@@ -23,7 +23,7 @@ for ($usuarios = 0; $usuarios < 100; $usuarios++) {
     RepositorioUsuario::insertarUsuario(Conexion::obtenerConexion(), $usuario);
 }
 
-for ($entradas = 0; $entradas < 100; $entradas++) { 
+for ($entradas = 0; $entradas < 100; $entradas++) {
     $titulo = sa(10);
     $texto = lorem();
     $autor = rand(1, 100);
@@ -32,7 +32,7 @@ for ($entradas = 0; $entradas < 100; $entradas++) {
     RepositorioEntrada::insertarEntrada(Conexion::obtenerConexion(), $entrada);
 }
 
-for ($comentarios = 0; $comentarios < 100; $comentarios++) { 
+for ($comentarios = 0; $comentarios < 100; $comentarios++) {
     $titulo = sa(10);
     $texto = lorem();
     $autor = rand(1, 100);
@@ -47,7 +47,7 @@ function sa($longitud) {
     $numeroCaracteres = strlen($caracteres);
     $stringAleatorio = '';
 
-    for ($i=0; $i < $longitud; $i++) { 
+    for ($i = 0; $i < $longitud; $i++) {
         $stringAleatorio .= $caracteres[rand(0, $numeroCaracteres - 1)];
     }
 
