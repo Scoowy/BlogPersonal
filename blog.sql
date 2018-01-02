@@ -75,6 +75,24 @@ CREATE TABLE entradasProgs (
         ON DELETE RESTRICT
 );
 
+CREATE TABLE comentariosProgs (
+    id INT NOT NULL UNIQUE AUTO_INCREMENT,
+    autor_id INT NOT NULL,
+    entrada_progs_id INT NOT NULL,
+    titulo VARCHAR(255) NOT NULL,
+    texto TEXT CHARACTER SET utf8 NOT NULL,
+    fecha DATETIME NOT NULL,
+    PRIMARY KEY(id),
+    FOREIGN KEY(autor_id)
+        REFERENCES usuarios(id)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+    FOREIGN KEY(entrada_progs_id)
+        REFERENCES entradasProgs(id)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+);
+
 CREATE TABLE ubicacion (
     id INT NOT NULL AUTO_INCREMENT,
     nombre VARCHAR(100) NOT NULL ,
@@ -101,6 +119,24 @@ CREATE TABLE entradasImg (
         ON DELETE RESTRICT,
     FOREIGN KEY(ubicacion)
         REFERENCES ubicacion(id)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+);
+
+CREATE TABLE comentariosImg (
+    id INT NOT NULL UNIQUE AUTO_INCREMENT,
+    autor_id INT NOT NULL,
+    entrada_img_id INT NOT NULL,
+    titulo VARCHAR(255) NOT NULL,
+    texto TEXT CHARACTER SET utf8 NOT NULL,
+    fecha DATETIME NOT NULL,
+    PRIMARY KEY(id),
+    FOREIGN KEY(autor_id)
+        REFERENCES usuarios(id)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+    FOREIGN KEY(entrada_img_id)
+        REFERENCES entradasImg(id)
         ON UPDATE CASCADE
         ON DELETE RESTRICT
 );

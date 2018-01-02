@@ -6,9 +6,9 @@ class EntradaImg {
     private $autorId;
     private $titulo;
     private $texto;
-    private $imagen = 'img/imgPrueba.jpg';
+    private $imagen;
     private $fecha;
-    private $ubicacion = 'Algun lugar del mundo.';
+    private $ubicacion;
     private $activa;
 
     public function __construct($id, $autorId, $titulo, $texto, $imagen, $fecha, $ubicacion, $activa) {
@@ -60,6 +60,10 @@ class EntradaImg {
 
     public function cambiarTexto($texto) {
         $this->texto = $texto;
+    }
+    
+    public function cambiarImagen($imagen) {
+        $this->imagen = $imagen;
     }
 
     public function cambiarUbicacion($ubicacion) {
