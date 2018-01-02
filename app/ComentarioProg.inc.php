@@ -1,25 +1,21 @@
 <?php
 
-class EntradaProg {
+class ComentarioProg {
 
     private $id;
     private $autorId;
-    private $lenguajeId;
+    private $entradaProgId;
     private $titulo;
     private $texto;
-    private $imagen;
     private $fecha;
-    private $activa;
 
-    public function __construct($id, $autorId, $lenguajeId, $titulo, $texto, $imagen, $fecha, $activa) {
+    function __construct($id, $autorId, $entradaProgId, $titulo, $texto, $fecha) {
         $this->id = $id;
         $this->autorId = $autorId;
-        $this->lenguajeId = $lenguajeId;
+        $this->entradaProgId = $entradaProgId;
         $this->titulo = $titulo;
         $this->texto = $texto;
-        $this->imagen = $imagen;
         $this->fecha = $fecha;
-        $this->activa = $activa;
     }
 
     public function obtenerId() {
@@ -30,8 +26,8 @@ class EntradaProg {
         return $this->autorId;
     }
 
-    public function obtenerLenguajeId() {
-        return $this->lenguajeId;
+    public function obtenerEntradaProgId() {
+        return $this->entradaProgId;
     }
 
     public function obtenerTitulo() {
@@ -42,16 +38,8 @@ class EntradaProg {
         return $this->texto;
     }
 
-    public function obtenerImagen() {
-        return $this->imagen;
-    }
-
     public function obtenerFecha() {
         return $this->fecha;
-    }
-
-    public function obtenerActiva() {
-        return $this->activa;
     }
 
     public function cambiarTitulo($titulo) {
@@ -60,14 +48,6 @@ class EntradaProg {
 
     public function cambiarTexto($texto) {
         $this->texto = $texto;
-    }
-
-    public function cambiarImagen($imagen) {
-        $this->imagen = $imagen;
-    }
-
-    public function cambiarActiva($activa) {
-        $this->activa = $activa;
     }
 
 }
