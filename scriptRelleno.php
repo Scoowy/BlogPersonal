@@ -5,11 +5,21 @@ include_once 'app/Conexion.inc.php';
 
 include_once 'app/Usuario.inc.php';
 include_once 'app/Entrada.inc.php';
+include_once 'app/EntradaProg.inc.php';
+include_once 'app/EntradaImg.inc.php';
 include_once 'app/Comentario.inc.php';
+include_once 'app/ComentarioProg.inc.php';
+include_once 'app/ComentarioImg.inc.php';
+include_once 'app/LenguajeProg.inc.php';
 
 include_once 'app/RepositorioUsuario.inc.php';
 include_once 'app/RepositorioEntrada.inc.php';
+include_once 'app/RepositorioEntradaProg.inc.php';
+include_once 'app/RepositorioEntradaImg.inc.php';
 include_once 'app/RepositorioComentario.inc.php';
+include_once 'app/RepositorioComentarioProg.inc.php';
+include_once 'app/RepositorioComentarioImg.inc.php';
+include_once 'app/RepositorioLenguajesProg.inc.php';
 
 $inicioTime = microtime(true);
 
@@ -25,6 +35,7 @@ for ($usuarios = 0; $usuarios < 100; $usuarios++) {
     RepositorioUsuario::insertarUsuario(Conexion::obtenerConexion(), $usuario);
 }
 
+# Relleno de Entradas Blog
 for ($entradas = 0; $entradas < 100; $entradas++) {
     $titulo = sa(10);
     $texto = lorem();
@@ -43,6 +54,48 @@ for ($comentarios = 0; $comentarios < 100; $comentarios++) {
     $comentario = new Comentario('', $autor, $entrada, $titulo, $texto, '');
     RepositorioComentario::insertarComentario(Conexion::obtenerConexion(), $comentario);
 }
+# Fin de Relleno de Entradas Blog
+
+# Relleno de Entradas Programacion
+$LENGUAJES = ['Python', 'PHP', 'HTML', 'Java', 'C++', 'C', 'C#', 'Ruby'];
+$IMAGENES = ['img/Ext_Py.jpg', 'img/Ext_PHP.jpg', 'img/Ext_HTML.jpg', 'img/Ext_All.jpg', 'img/Ext_All.jpg', 'img/Ext_All.jpg', 'img/Ext_All.jpg', 'img/Ext_All.jpg'];
+
+# Relleno de Lenguajes de Programacion
+for ($li = 0; $li < count($LENGUAJES); $li++) {
+    $nombre = $LENGUAJES[$li];
+    $imagen = $IMAGENES[$li];
+    $color1 = sa(5);
+    $color2 = sa(5);
+
+    $lenguajeProg = new LenguajeProg('', $nombre, $imagen, $color1, $color2, '');
+    RepositorioLenguajeProg::insertarLenguajeProg(Conexion::obtenerConexion(), $lenguajeProg);
+}
+# Fin Relleno de Lenguajes de Programacion
+
+# Relleno de Entradas Programacion
+for ($entradasProg = 0; $entradasProg < 100; $entradasProg++) {
+    $lenguajeP = selectLeng();
+    $autor = rand(1, 100);
+    $titulo = sa(10);
+    $texto = lorem();
+    $imagen = 'img/imgPrueba.jpg';
+
+    $entradaProg = new EntradaProg('', $autor, $lenguajeP, $titulo, $texto, $imagen, '', '');
+    RepositorioEntradaProg::insertarEntradaProg(Conexion::obtenerConexion(), $entradaProg);
+}
+
+set_time_limit(30);
+
+for ($comentariosProg = 0; $comentariosProg < 100; $comentariosProg++) {
+    $titulo = sa(10);
+    $texto = lorem();
+    $autor = rand(1, 100);
+    $entrada = rand(1, 100);
+
+    $comentarioProg = new ComentarioProg('', $autor, $entrada, $titulo, $texto, '');
+    RepositorioComentarioProg::insertarComentarioProg(Conexion::obtenerConexion(), $comentarioProg);
+}
+# Fin de Relleno de Entradas Programacion
 
 function sa($longitud) {
     $caracteres = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -68,6 +121,11 @@ function lorem() {
         Nam in lobortis neque. Praesent velit dolor, consequat et erat eget, feugiat bibendum massa. Cras at dignissim orci, gravida aliquam massa. Nam efficitur vestibulum ligula sit amet euismod. Praesent aliquet at tellus vitae iaculis. Proin congue porta justo. Vestibulum bibendum magna erat, eu aliquam tortor ultricies ac. Vivamus rhoncus dictum consectetur. Nullam rhoncus urna vel feugiat sodales. Suspendisse nulla ante, tincidunt ut ultrices vel, lacinia eu neque.';
 
     return $lorem;
+}
+
+function selectLeng() {
+    $lenP = rand(1, 8);
+    return $lenP;
 }
 
 # Tiempo de ejecucion del script junto a $inicioTime = microtime(true)

@@ -11,13 +11,13 @@ class RepositorioEntradaProg {
 
         if (isset($conexion)) {
             try {
-                $sql = "INSERT INTO entradas(autor_id, lenguaje_id, titulo, texto, imagen, fecha, activa) VALUES(:autorId, :lenguajeId, :titulo, :texto, :imagen, NOW(), 0)";
+                $sql = "INSERT INTO entradasProgs(autor_id, lenguaje_id, titulo, texto, imagen, fecha, activa) VALUES(:autorId, :lenguajeId, :titulo, :texto, :imagen, NOW(), 0)";
 
                 $autorIdTemp = $entradaProg->obtenerAutorId();
                 $lenguajeIdTemp = $entradaProg->obtenerLenguajeId();
                 $tituloTemp = $entradaProg->obtenerTitulo();
                 $textoTemp = $entradaProg->obtenerTexto();
-                $imagenTemp = $entradaProg->obtenerIamagen();
+                $imagenTemp = $entradaProg->obtenerImagen();
 
                 $sentencia = $conexion->prepare($sql);
 
