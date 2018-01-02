@@ -11,6 +11,7 @@ include_once 'app/Comentario.inc.php';
 include_once 'app/ComentarioProg.inc.php';
 include_once 'app/ComentarioImg.inc.php';
 include_once 'app/LenguajeProg.inc.php';
+include_once 'app/Ubicacion.inc.php';
 
 include_once 'app/RepositorioUsuario.inc.php';
 include_once 'app/RepositorioEntrada.inc.php';
@@ -20,24 +21,28 @@ include_once 'app/RepositorioComentario.inc.php';
 include_once 'app/RepositorioComentarioProg.inc.php';
 include_once 'app/RepositorioComentarioImg.inc.php';
 include_once 'app/RepositorioLenguajesProg.inc.php';
+include_once 'app/RepositorioUbicacion.inc.php';
 
 $inicioTime = microtime(true);
 
 Conexion::abrirConexion();
 
+$DOMINIO = ['com', 'es', 'net'];
+
+# Relleno de Usuarios
 for ($usuarios = 0; $usuarios < 100; $usuarios++) {
-    $nombre = sa(10);
-    $email = sa(5) . '@' . sa(3);
+    $nombre = sa(random_int(10, 25));
+    $email = sa(random_int(5, 15)) . '@' . sa(3) . '.' . $DOMINIO[random_int(0, 2)];
     $password = password_hash('123456', PASSWORD_DEFAULT);
     $foto = 'img/usuario.png';
 
     $usuario = new Usuario('', $nombre, $email, $password, $foto, '', '');
     RepositorioUsuario::insertarUsuario(Conexion::obtenerConexion(), $usuario);
 }
-
+# Fin Relleno de Usuarios
 # Relleno de Entradas Blog
 for ($entradas = 0; $entradas < 100; $entradas++) {
-    $titulo = sa(10);
+    $titulo = sa(random_int(10, 30));
     $texto = lorem();
     $autor = rand(1, 100);
 
@@ -46,7 +51,7 @@ for ($entradas = 0; $entradas < 100; $entradas++) {
 }
 
 for ($comentarios = 0; $comentarios < 100; $comentarios++) {
-    $titulo = sa(10);
+    $titulo = sa(random_int(10, 30));
     $texto = lorem();
     $autor = rand(1, 100);
     $entrada = rand(1, 100);
@@ -55,11 +60,10 @@ for ($comentarios = 0; $comentarios < 100; $comentarios++) {
     RepositorioComentario::insertarComentario(Conexion::obtenerConexion(), $comentario);
 }
 # Fin de Relleno de Entradas Blog
-
-# Relleno de Entradas Programacion
+# Variables de prueba
 $LENGUAJES = ['Python', 'PHP', 'HTML', 'Java', 'C++', 'C', 'C#', 'Ruby'];
 $IMAGENES = ['img/Ext_Py.jpg', 'img/Ext_PHP.jpg', 'img/Ext_HTML.jpg', 'img/Ext_All.jpg', 'img/Ext_All.jpg', 'img/Ext_All.jpg', 'img/Ext_All.jpg', 'img/Ext_All.jpg'];
-
+# Fin Variables de prueba
 # Relleno de Lenguajes de Programacion
 for ($li = 0; $li < count($LENGUAJES); $li++) {
     $nombre = $LENGUAJES[$li];
@@ -71,12 +75,11 @@ for ($li = 0; $li < count($LENGUAJES); $li++) {
     RepositorioLenguajeProg::insertarLenguajeProg(Conexion::obtenerConexion(), $lenguajeProg);
 }
 # Fin Relleno de Lenguajes de Programacion
-
 # Relleno de Entradas Programacion
 for ($entradasProg = 0; $entradasProg < 100; $entradasProg++) {
     $lenguajeP = selectLeng();
     $autor = rand(1, 100);
-    $titulo = sa(10);
+    $titulo = sa(random_int(10, 30));
     $texto = lorem();
     $imagen = 'img/imgPrueba.jpg';
 
@@ -87,7 +90,7 @@ for ($entradasProg = 0; $entradasProg < 100; $entradasProg++) {
 set_time_limit(30);
 
 for ($comentariosProg = 0; $comentariosProg < 100; $comentariosProg++) {
-    $titulo = sa(10);
+    $titulo = sa(random_int(10, 30));
     $texto = lorem();
     $autor = rand(1, 100);
     $entrada = rand(1, 100);
@@ -96,9 +99,47 @@ for ($comentariosProg = 0; $comentariosProg < 100; $comentariosProg++) {
     RepositorioComentarioProg::insertarComentarioProg(Conexion::obtenerConexion(), $comentarioProg);
 }
 # Fin de Relleno de Entradas Programacion
+# Variables de prueba
+$TIPOS = ['Restaurante', 'Bar', 'Hotel', 'Parque', 'Playa', 'Universidad', 'Colegio', 'Discoteca'];
+# Fin Variables de prueba
+# Relleno de Ubicaciones
+for ($ubicaciones = 0; $ubicaciones < 100; $ubicaciones++) {
+    $nombre = sa(random_int(15, 50));
+    $direccion = sa(random_int(30, 50));
+    $lat = randomFloat(0, 90);
+    $lng = randomFloat(0, 180);
+    $tipo = selectTipo($TIPOS);
+
+    $ubicacion = new Ubicacion('', $nombre, $direccion, $lat, $lng, $tipo);
+    RepositorioUbicacion::insertarUbicacion(Conexion::obtenerConexion(), $ubicacion);
+}
+# Fin Relleno de Ubicaciones
+# Relleno de Entradas Imagenes
+for ($entradasImg = 0; $entradasImg < 100; $entradasImg++) {
+    $lenguajeP = selectLeng();
+    $autor = rand(1, 100);
+    $titulo = sa(random_int(10, 30));
+    $texto = lorem();
+    $imagen = 'img/imgPrueba.jpg';
+    $ubi = rand(1, 100);
+
+    $entradaImg = new EntradaImg('', $autor, $titulo, $texto, $imagen, '', $ubi, '');
+    RepositorioEntradaImg::insertarEntradaImg(Conexion::obtenerConexion(), $entradaImg);
+}
+
+for ($comentariosImg = 0; $comentariosImg < 100; $comentariosImg++) {
+    $titulo = sa(random_int(10, 30));
+    $texto = lorem();
+    $autor = rand(1, 100);
+    $entrada = rand(1, 100);
+
+    $comentarioImg = new ComentarioImg('', $autor, $entrada, $titulo, $texto, '');
+    RepositorioComentarioImg::insertarComentarioImg(Conexion::obtenerConexion(), $comentarioImg);
+}
+# Fin de Relleno de Entradas Imagenes
 
 function sa($longitud) {
-    $caracteres = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $caracteres = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ';
     $numeroCaracteres = strlen($caracteres);
     $stringAleatorio = '';
 
@@ -126,6 +167,20 @@ function lorem() {
 function selectLeng() {
     $lenP = rand(1, 8);
     return $lenP;
+}
+
+function selectTipo($TIPOS) {
+    $tipo = $TIPOS[rand(0, 7)];
+    return $tipo;
+}
+
+function randomFloat($min = 0, $max = 1) {
+    $num = $min + mt_rand() / mt_getrandmax() * ($max - $min);
+
+    if (random_int(0, 1)) {
+        $num = $num * (-1);
+    }
+    return round($num, 6);
 }
 
 # Tiempo de ejecucion del script junto a $inicioTime = microtime(true)

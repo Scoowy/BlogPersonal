@@ -4,15 +4,15 @@ class ComentarioImg {
 
     private $id;
     private $autorId;
-    private $entradaId;
+    private $entradaImgId;
     private $titulo;
     private $texto;
     private $fecha;
 
-    function __construct($id, $autorId, $entradaId, $titulo, $texto, $fecha) {
+    function __construct($id, $autorId, $entradaImgId, $titulo, $texto, $fecha) {
         $this->id = $id;
         $this->autorId = $autorId;
-        $this->entradaId = $entradaId;
+        $this->entradaImgId = $entradaImgId;
         $this->titulo = $titulo;
         $this->texto = $texto;
         $this->fecha = $fecha;
@@ -26,8 +26,8 @@ class ComentarioImg {
         return $this->autorId;
     }
 
-    public function obtenerEntradaId() {
-        return $this->entradaId;
+    public function obtenerEntradaImgId() {
+        return $this->entradaImgId;
     }
 
     public function obtenerTitulo() {

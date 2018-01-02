@@ -11,7 +11,7 @@ class RepositorioEntradaImg {
 
         if (isset($conexion)) {
             try {
-                $sql = "INSERT INTO entradasImg(autor_id, titulo, texto, imagen, fecha, ubicacion, activa) VALUES(:autorId, :titulo, :texto, :imagen , NOW(), :ubicacion, 0)";
+                $sql = "INSERT INTO entradasImg(autor_id, titulo, texto, imagen, fecha, ubicacion, activa) VALUES(:autorId, :titulo, :texto, :imagen , NOW(), :ubicacion, 1)";
 
                 $autorIdTemp = $entradaImg->obtenerAutorId();
                 $tituloTemp = $entradaImg->obtenerTitulo();

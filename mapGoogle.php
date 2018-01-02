@@ -12,7 +12,7 @@
             function load() {
 
                 map = new GMap2(document.getElementById("map"));
-                map.setCenter(new GLatLng(10.4937589840847, -66.1071181297302), 15);
+                map.setCenter(new GLatLng(10.49375890847840847, -66.1071181297302), 15);
                 map.addControl(new GSmallMapControl());
                 map.addControl(new GMapTypeControl());
                 geocoder = new GClientGeocoder();

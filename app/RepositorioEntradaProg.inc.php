@@ -11,7 +11,7 @@ class RepositorioEntradaProg {
 
         if (isset($conexion)) {
             try {
-                $sql = "INSERT INTO entradasProgs(autor_id, lenguaje_id, titulo, texto, imagen, fecha, activa) VALUES(:autorId, :lenguajeId, :titulo, :texto, :imagen, NOW(), 0)";
+                $sql = "INSERT INTO entradasProgs(autor_id, lenguaje_id, titulo, texto, imagen, fecha, activa) VALUES(:autorId, :lenguajeId, :titulo, :texto, :imagen, NOW(), 1)";
 
                 $autorIdTemp = $entradaProg->obtenerAutorId();
                 $lenguajeIdTemp = $entradaProg->obtenerLenguajeId();
