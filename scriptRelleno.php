@@ -11,6 +11,8 @@ include_once 'app/RepositorioUsuario.inc.php';
 include_once 'app/RepositorioEntrada.inc.php';
 include_once 'app/RepositorioComentario.inc.php';
 
+$inicioTime = microtime(true);
+
 Conexion::abrirConexion();
 
 for ($usuarios = 0; $usuarios < 100; $usuarios++) {
@@ -67,3 +69,8 @@ function lorem() {
 
     return $lorem;
 }
+
+# Tiempo de ejecucion del script junto a $inicioTime = microtime(true)
+$finTime = microtime(true);
+$totalTime = $finTime - $inicioTime;
+echo 'Completado en: ' . round($totalTime, 2);
