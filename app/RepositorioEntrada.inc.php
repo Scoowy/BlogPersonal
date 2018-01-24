@@ -37,7 +37,7 @@ class RepositorioEntrada {
 
         if (isset($conexion)) {
             try {
-                $sql = 'SELECT * FROM entradas ORDER BY fecha DESC LIMIT 10';
+                $sql = 'SELECT * FROM entradas ORDER BY fecha DESC LIMIT '. random_int(10, 25);
 
                 $sentencia = $conexion->prepare($sql);
 

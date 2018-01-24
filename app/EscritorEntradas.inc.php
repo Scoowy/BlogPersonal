@@ -47,6 +47,11 @@ class EscritorEntradas {
                     <hr class="mb-md-0">
                     <p style="text-align: right; margin-bottom: 0px;">
                         <small>
+                            <a href="#">
+                                <?php
+                                echo $entrada->obtenerAutorId();
+                                ?>
+                            </a>
                             <?php
                             echo $entrada->obtenerFecha();
                             ?>
