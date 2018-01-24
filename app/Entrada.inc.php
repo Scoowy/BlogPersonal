@@ -9,13 +9,14 @@ class Entrada {
     private $fecha;
     private $activa;
 
-    public function __construct($id, $autorId, $titulo, $texto, $fecha, $activa) {
+    public function __construct($id, $autorId, $titulo, $texto, $fecha, $activa, $nombre) {
         $this->id = $id;
         $this->autorId = $autorId;
         $this->titulo = $titulo;
         $this->texto = $texto;
         $this->fecha = $fecha;
         $this->activa = $activa;
+        $this->nombre = $nombre;
     }
 
     public function obtenerId() {
@@ -40,6 +41,10 @@ class Entrada {
 
     public function obtenerActiva() {
         return $this->activa;
+    }
+
+    public function obtenerNombre() {
+        return $this->nombre;
     }
 
     public function cambiarTitulo($titulo) {
