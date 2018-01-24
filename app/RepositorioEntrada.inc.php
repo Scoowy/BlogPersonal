@@ -37,7 +37,7 @@ class RepositorioEntrada {
 
         if (isset($conexion)) {
             try {
-                $sql = 'SELECT * FROM entradas ORDER BY fecha DESC LIMIT 10';
+                $sql = 'SELECT entradas.*, usuarios.nombre FROM entradas, usuarios WHERE entradas.autor_id = usuarios.id ORDER BY entradas.fecha DESC LIMIT '. random_int(10, 25);
 
                 $sentencia = $conexion->prepare($sql);
 
@@ -48,7 +48,7 @@ class RepositorioEntrada {
                 if (count($resultado)) {
                     foreach ($resultado as $fila) {
 
-                        $entradas[] = new Entrada($fila['id'], $fila['autor_id'], $fila['titulo'], $fila['texto'], $fila['fecha'], $fila['activa']);
+                        $entradas[] = new Entrada($fila['id'], $fila['autor_id'], $fila['titulo'], $fila['texto'], $fila['fecha'], $fila['activa'], $fila['nombre']);
                     }
                 }
             } catch (PDOException $ex) {
