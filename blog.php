@@ -23,7 +23,7 @@ include_once 'plts/navBar.inc.php';
     <div class="container">
         <div class="container">
             <br>
-            <h1 class="text-muted">Ultimos Articulos</h1>
+            <h1 class="text-primary">Ultimos Articulos</h1>
             <hr class="mb-4">
         </div>
         <div class="container">

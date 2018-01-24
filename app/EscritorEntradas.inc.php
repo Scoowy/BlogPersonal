@@ -49,7 +49,7 @@ class EscritorEntradas {
                         <small>
                             <a href="#">
                                 <?php
-                                echo $entrada->obtenerAutorId();
+                                echo $entrada->obtenerNombre();
                                 ?>
                             </a>
                             <?php
