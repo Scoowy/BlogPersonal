@@ -31,7 +31,7 @@ $DOMINIO = ['com', 'es', 'net'];
 
 # Relleno de Usuarios
 for ($usuarios = 0; $usuarios < 100; $usuarios++) {
-    $nombre = sa(random_int(10, 25));
+    $nombre = nombreUser(random_int(6, 24));
     $email = sa(random_int(5, 15)) . '@' . sa(3) . '.' . $DOMINIO[random_int(0, 2)];
     $password = password_hash('123456', PASSWORD_DEFAULT);
     $foto = 'img/usuario.png';
@@ -140,6 +140,18 @@ for ($comentariosImg = 0; $comentariosImg < 100; $comentariosImg++) {
 
 function sa($longitud) {
     $caracteres = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ';
+    $numeroCaracteres = strlen($caracteres);
+    $stringAleatorio = '';
+
+    for ($i = 0; $i < $longitud; $i++) {
+        $stringAleatorio .= $caracteres[rand(0, $numeroCaracteres - 1)];
+    }
+
+    return $stringAleatorio;
+}
+
+function nombreUser($longitud) {
+    $caracteres = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-';
     $numeroCaracteres = strlen($caracteres);
     $stringAleatorio = '';
 

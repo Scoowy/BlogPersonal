@@ -26,13 +26,28 @@ include_once 'plts/navBar.inc.php';
             <h1 class="text-primary">Ultimos Articulos</h1>
             <hr class="mb-4">
         </div>
+
         <div class="container">
             <div class="row">
                 <?php
-                EscritorEntradas::escribirEntradas();
+                EscritorEntradas::escribirEntMinimals();
                 ?>
             </div>
         </div>
+
+        <!-- <div class="contenedor">
+            <?php
+            // EscritorEntradas::escribirTarjetas();
+            ?>
+        </div> -->
+
+        <!-- <div class="container">
+            <div class="row">
+                <?php
+                // EscritorEntradas::escribirEntradas();
+                ?>
+            </div>
+        </div> -->
     </div>
     <hr class="my-4">
 </main>

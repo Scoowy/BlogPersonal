@@ -2,7 +2,7 @@
     <legend>Informacion personal</legend>
     <div class="form-group">
         <label>Nombre de usuario</label>
-        <input class="form-control" placeholder="ScoowyDS" type="text" name="nombre" <?php $validador->mostrarNombre() ?>>
+        <input class="form-control" placeholder="(Min-6  Max-24 caracteres)" type="text" name="nombre" <?php $validador->mostrarNombre() ?>>
         <?php
         $validador->mostrarErrorNombre();
         ?>

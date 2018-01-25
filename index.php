@@ -49,7 +49,12 @@ include_once 'plts/navBar.inc.php';
         <div class="contenedor_tarjeta" id="tarjetaPy">
             <a href="#">
                 <figure id="tarjeta">
-                    <img src="img/Ext_Py.jpg" class="frontal" alt="">
+                    <div class="frontal">
+                        <img src="img/Ext_Py.jpg" alt="">
+                        <div class="textTarjetaFront">
+                            Hola mundo
+                        </div>
+                    </div>
                     <figcaption class="trasera">
                         <h2 class="titulo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, vero!</h2>
                         <hr>
