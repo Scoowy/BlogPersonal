@@ -10,7 +10,7 @@ include_once 'plts/navBar.inc.php';
 ?>
 
 <main role="main" class="container">
-    <div class="jumbotron">
+    <div class="jumbotron bordeMin-left">
         <h1>
             Novedades
             <small class="text-muted">Siempre actualizado</small>
@@ -23,9 +23,9 @@ include_once 'plts/navBar.inc.php';
     <div class="container">
         <div class="container">
             <br>
-            <h1 class="text-primary">Ultimos Articulos</h1>
-            <hr class="mb-4">
+            <h1 class="text-primary bordeMin-bottom">Ultimos Articulos</h1>
         </div>
+        <br>
 
         <div class="container">
             <div class="row">

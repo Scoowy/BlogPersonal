@@ -5,12 +5,6 @@ include_once 'app/RepositorioUsuario.inc.php';
 include_once 'app/ValidadorRegistro.inc.php';
 include_once 'app/Redireccion.inc.php';
 
-if (isset($_GET['nombre']) && !empty($_GET['nombre'])) {
-    $nombre = $_GET['nombre'];
-} else {
-    Redireccion::redirigir(SERVIDOR);
-}
-
 $titulo = 'Registro Correcto - Scoowy Page - Prebuilt Layout';
 
 include_once 'plts/docDeclaracion.inc.php';

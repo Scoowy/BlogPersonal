@@ -129,14 +129,14 @@ class EscritorEntradas {
         } else {
             ?>
 
-            <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
                 <div class="thumbnail">
                     <img src="img/600x270.png" alt="">
                     <div class="caption py-3 px-3">
                         <div class="container-fluid px-0">
                             <div class="media pb-2">
                                 <img class="mr-2 ml-0 avatarUser" src="img/usuario.png" alt="Imagen del usuario">
-                                <div class="media-body">
+                                <div class="media-body" style="overflow: auto;">
                                     <h6 class="mt-1 mb-1 text-secondary  nombreUser">
                                         <a href="#" title="">
                                             <?php
@@ -159,9 +159,11 @@ class EscritorEntradas {
                             echo $entrada->obtenerTitulo();
                             ?>
                         </h5>
+                        <p class="text-justify">
                         <?php
                             echo nl2br(self::resumirTexto($entrada->obtenerTexto()));
                         ?>
+                        </p>
                         <hr>
                         <div class="container-fluid p-auto">
                             <a href="#">Seguir leyendo</a>

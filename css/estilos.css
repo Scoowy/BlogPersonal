@@ -214,12 +214,17 @@ figure .trasera p {
     margin-bottom: 20px;
     border-width: 1px;
     border-style: solid;
-    border-radius: 0;
+    border-radius: 5px;
     background: #fff;
     cursor: pointer;
+/*    max-height: 350px;
+    min-height: 200px;*/
 }
 
 .thumbnail:hover {
+    border: 6px #1F9BCF;
+    border-style: solid hidden solid hidden;
+    border-radius: 5px;
 
 }
 
@@ -244,8 +249,8 @@ figure .trasera p {
 }
 
 .media .avatarUser {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
 }
 
@@ -254,3 +259,27 @@ figure .trasera p {
 }
 
 /* Fin CSS de Entradas Minimalistas */
+
+.bordeMin, .bordeMin-top, .bordeMin-bottom, .bordeMin-left, .bordeMin-right {
+    border-width: 6px;
+    border-style: solid;
+    border-color: #1F9BCF;
+    /*border-color: #4BBF73; color verde*/  
+}
+
+.bordeMin-top {
+    border-style: solid none none none;
+}
+
+.bordeMin-right {
+    border-style: none solid none none;
+}
+
+.bordeMin-bottom {
+    border-style: none none solid none;
+}
+
+.bordeMin-left {
+    border-style: none none none solid;
+}
+

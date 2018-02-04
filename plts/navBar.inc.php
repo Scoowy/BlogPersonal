@@ -22,13 +22,13 @@ $totalUsuarios = RepositorioUsuario::obtenerNumeroUsuarios(Conexion::obtenerCone
                 <a class="nav-link" href="<?php echo RUTAPROGRAMACION ?>"><i class="fas fa-code"></i> Programacion</a>
             </li>
             <li class="nav-item" id="linkGaleria">
-                <a class="nav-link" href="<?php echo RUTAGALERIA ?>"><i class="fas fa-images"></i> Galeria</a>
+                <a class="nav-link disabled" href="<?php echo RUTAGALERIA ?>"><i class="fas fa-images"></i> Galeria</a>
             </li>
             <li class="nav-item" id="linkBlog">
                 <a class="nav-link" href="<?php echo RUTABLOG ?>"><i class="fab fa-blogger-b"></i> Blog</a>
             </li>
             <li class="nav-item" id="linkRepositorio">
-                <a class="nav-link" href="<?php echo RUTAREPOSITORIO ?>"><i class="fas fa-code-branch"></i> Repositorio</a>
+                <a class="nav-link disabled" href="<?php echo RUTAREPOSITORIO ?>"><i class="fas fa-code-branch"></i> Repositorio</a>
             </li>
             <li class="nav-item" id="linkUsuarios">
                 <a class="nav-link" href="<?php echo RUTAUSUARIOS ?>"><i class="fas fa-users"></i>

@@ -30,12 +30,12 @@ Conexion::cerrarConexion();
 ?>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery-3.2.1.min.js"></script>
+<script src="<?php echo RUTAJS ?>jquery-3.2.1.min.js"></script>
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/tooltip.js"></script>
-<script src="js/popper.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="<?php echo RUTAJS ?>tooltip.js"></script>
+<script src="<?php echo RUTAJS ?>popper.js"></script>
+<script src="<?php echo RUTAJS ?>bootstrap.min.js"></script>
 
 <!-- Scrip que permite el popper -->
 <script>

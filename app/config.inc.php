@@ -10,20 +10,25 @@ define('NOMBREDB', 'blogpersonal');
 define("SERVIDOR", "http://localhost/BlogPersonal");
 
 // Rutas de la web - Tema: Usuarios
-define("RUTAREGISTRO", SERVIDOR . "/registro.php");
-define("RUTAREGISTROCORRECTO", SERVIDOR . "/registroCorrecto.php");
-define("RUTALOGIN", SERVIDOR . "/login.php");
-define("RUTAUSUARIOS", SERVIDOR . "/usuarios.php");
-define("RUTAPERFIL", SERVIDOR . "/perfil.php");
+define("RUTAREGISTRO", SERVIDOR . "/registro");
+define("RUTAREGISTROCORRECTO", SERVIDOR . "/registroCorrecto");
+define("RUTALOGIN", SERVIDOR . "/login");
+define("RUTAUSUARIOS", SERVIDOR . "/usuarios");
+define("RUTAPERFIL", SERVIDOR . "/perfil");
 
 // Rutas de la web - Tema: Paginas propias
-define("RUTAPROGRAMACION", SERVIDOR . "/programacion.php");
-define("RUTAGALERIA", SERVIDOR . "/galeria.php");
-define("RUTABLOG", SERVIDOR . "/blog.php");
-define("RUTAREPOSITORIO", SERVIDOR . "/repositorio.php");
+define("RUTAPROGRAMACION", SERVIDOR . "/programacion");
+define("RUTAGALERIA", SERVIDOR . "/galeria");
+define("RUTABLOG", SERVIDOR . "/blog");
+define("RUTAREPOSITORIO", SERVIDOR . "/repositorio");
 
 // Rutas de la web - Tema: Links Dropdown menu users
-define("RUTAENTRADAS", SERVIDOR . "/logout.php");
-define("RUTACOMENTARIOS", SERVIDOR . "/comentarios.php");
-define("RUTAFAVORITOS", SERVIDOR . "/favoritos.php");
-define("RUTALOGOUT", SERVIDOR . "/logout.php");
+define("RUTAENTRADAS", SERVIDOR . "/logout");
+define("RUTACOMENTARIOS", SERVIDOR . "/comentarios");
+define("RUTAFAVORITOS", SERVIDOR . "/favoritos");
+define("RUTALOGOUT", SERVIDOR . "/logout");
+
+// Recursos
+define("RUTACSS", SERVIDOR . "/css/");
+define("RUTAJS", SERVIDOR . "/js/");
+define("RUTAIMG", SERVIDOR . "/img/");

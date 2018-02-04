@@ -15,7 +15,7 @@ if (isset($_POST['enviar'])) {
         $usuarioInsertado = RepositorioUsuario::insertarUsuario(Conexion::obtenerConexion(), $usuario);
 
         if ($usuarioInsertado) {
-            Redireccion::redirigir(RUTAREGISTROCORRECTO . '?nombre=' . $usuario->obtenerNombre());
+            Redireccion::redirigir(RUTAREGISTROCORRECTO . '/' . $usuario->obtenerNombre());
         }
     }
 
@@ -29,7 +29,7 @@ include_once 'plts/navBar.inc.php';
 ?>
 
 <main role="main" class="container">
-    <div class="jumbotron">
+    <div class="jumbotron bordeMin-left">
         <h1>
             Pagina de registro
             <small class="text-muted">Unete a la mejor comunidad!</small>
@@ -40,8 +40,8 @@ include_once 'plts/navBar.inc.php';
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
-                <div class="panel panel-default">
+            <div class="col-md-6 mb-3">
+                <div class="panel panel-default bordeMin-left">
                     <div class="panel-heading">
                         <h3 class="panel-title">Instrucciones</h3>
                     </div>
@@ -61,7 +61,7 @@ include_once 'plts/navBar.inc.php';
                         <h3 class="panel-title">Formulario</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form" method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
+                        <form role="form" method="post" action="<?php echo RUTAREGISTRO ?>">
                             <?php
                             if (isset($_POST['enviar'])) {
                                 include_once 'plts/registroValidado.inc.php';
