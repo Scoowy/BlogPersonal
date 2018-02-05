@@ -43,10 +43,11 @@ for ($usuarios = 0; $usuarios < 100; $usuarios++) {
 # Relleno de Entradas Blog
 for ($entradas = 0; $entradas < 100; $entradas++) {
     $titulo = sa(random_int(10, 30));
+    $url = titulo2url($titulo);
     $texto = lorem();
     $autor = rand(1, 100);
 
-    $entrada = new Entrada('', $autor, $titulo, $texto, '', '');
+    $entrada = new Entrada('', $autor, $url, $titulo, $texto, '', '');
     RepositorioEntrada::insertarEntrada(Conexion::obtenerConexion(), $entrada);
 }
 
@@ -80,6 +81,7 @@ for ($entradasProg = 0; $entradasProg < 100; $entradasProg++) {
     $lenguajeP = selectLeng();
     $autor = rand(1, 100);
     $titulo = sa(random_int(10, 30));
+    $url = titulo2url($titulo);
     $texto = lorem();
     $imagen = 'img/imgPrueba.jpg';
 
@@ -119,6 +121,7 @@ for ($entradasImg = 0; $entradasImg < 100; $entradasImg++) {
     $lenguajeP = selectLeng();
     $autor = rand(1, 100);
     $titulo = sa(random_int(10, 30));
+    $url = titulo2url($titulo);
     $texto = lorem();
     $imagen = 'img/imgPrueba.jpg';
     $ubi = rand(1, 100);
@@ -193,6 +196,15 @@ function randomFloat($min = 0, $max = 1) {
         $num = $num * (-1);
     }
     return round($num, 6);
+}
+
+function titulo2url($titulo, $caract = '-'){
+    for ($i=0;$i< strlen($titulo);$i++) {
+        if ($titulo{$i} == ' ') {
+            $titulo{$i} = $caract;
+        }
+    }
+    return $titulo;
 }
 
 # Tiempo de ejecucion del script junto a $inicioTime = microtime(true)

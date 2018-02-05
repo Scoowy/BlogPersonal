@@ -41,13 +41,13 @@ include_once 'plts/navBar.inc.php';
             ?>
         </div> -->
 
-        <!-- <div class="container">
+<!--        <div class="container">
             <div class="row">
                 <?php
-                // EscritorEntradas::escribirEntradas();
+//                EscritorEntradas::escribirEntradas();
                 ?>
             </div>
-        </div> -->
+        </div>-->
     </div>
     <hr class="my-4">
 </main>

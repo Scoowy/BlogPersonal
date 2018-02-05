@@ -19,7 +19,7 @@ $totalUsuarios = RepositorioUsuario::obtenerNumeroUsuarios(Conexion::obtenerCone
                 <a class="nav-link" href="<?php echo SERVIDOR ?>"><i class="fas fa-home"></i> Inicio<span class="sr-only">(actual)</span></a>
             </li>
             <li class="nav-item" id="linkProgramacion">
-                <a class="nav-link" href="<?php echo RUTAPROGRAMACION ?>"><i class="fas fa-code"></i> Programacion</a>
+                <a class="nav-link disabled" href="<?php echo RUTAPROGRAMACION ?>"><i class="fas fa-code"></i> Programacion</a>
             </li>
             <li class="nav-item" id="linkGaleria">
                 <a class="nav-link disabled" href="<?php echo RUTAGALERIA ?>"><i class="fas fa-images"></i> Galeria</a>

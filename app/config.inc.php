@@ -15,6 +15,7 @@ define("RUTAREGISTROCORRECTO", SERVIDOR . "/registroCorrecto");
 define("RUTALOGIN", SERVIDOR . "/login");
 define("RUTAUSUARIOS", SERVIDOR . "/usuarios");
 define("RUTAPERFIL", SERVIDOR . "/perfil");
+define("RUTAENTRADA", SERVIDOR . "/entrada");
 
 // Rutas de la web - Tema: Paginas propias
 define("RUTAPROGRAMACION", SERVIDOR . "/programacion");
@@ -23,12 +24,12 @@ define("RUTABLOG", SERVIDOR . "/blog");
 define("RUTAREPOSITORIO", SERVIDOR . "/repositorio");
 
 // Rutas de la web - Tema: Links Dropdown menu users
-define("RUTAENTRADAS", SERVIDOR . "/logout");
+define("RUTAENTRADAS", SERVIDOR . "/entradas");
 define("RUTACOMENTARIOS", SERVIDOR . "/comentarios");
 define("RUTAFAVORITOS", SERVIDOR . "/favoritos");
 define("RUTALOGOUT", SERVIDOR . "/logout");
 
-// Recursos
+// Rutas de archivos
 define("RUTACSS", SERVIDOR . "/css/");
 define("RUTAJS", SERVIDOR . "/js/");
 define("RUTAIMG", SERVIDOR . "/img/");

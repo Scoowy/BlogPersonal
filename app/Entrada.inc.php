@@ -4,20 +4,33 @@ class Entrada {
 
     private $id;
     private $autorId;
+    private $url;
     private $titulo;
     private $texto;
     private $fecha;
     private $activa;
+    private $nombre;
 
-    public function __construct($id, $autorId, $titulo, $texto, $fecha, $activa, $nombre) {
+    public function __construct($id, $autorId, $url, $titulo, $texto, $fecha, $activa, $nombre) {
         $this->id = $id;
         $this->autorId = $autorId;
+        $this->url = $url;
         $this->titulo = $titulo;
         $this->texto = $texto;
         $this->fecha = $fecha;
         $this->activa = $activa;
         $this->nombre = $nombre;
     }
+    
+//    public function __construct($id, $autorId, $titulo, $texto, $fecha, $activa, $nombre) {
+//        $this->id = $id;
+//        $this->autorId = $autorId;
+//        $this->titulo = $titulo;
+//        $this->texto = $texto;
+//        $this->fecha = $fecha;
+//        $this->activa = $activa;
+//        $this->nombre = $nombre;
+//    }
 
     public function obtenerId() {
         return $this->id;
@@ -25,6 +38,10 @@ class Entrada {
 
     public function obtenerAutorId() {
         return $this->autorId;
+    }
+    
+    public function obtenerUrl() {
+        return $this->url;
     }
 
     public function obtenerTitulo() {
@@ -45,6 +62,10 @@ class Entrada {
 
     public function obtenerNombre() {
         return $this->nombre;
+    }
+    
+    public function cambiarUrl($url) {
+        $this->activa = $url;
     }
 
     public function cambiarTitulo($titulo) {

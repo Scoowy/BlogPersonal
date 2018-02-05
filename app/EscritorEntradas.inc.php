@@ -62,16 +62,16 @@ class EscritorEntradas {
                     </div>
                     <br>
                     <div>
-                        <a class="btn btn-info btn-sm" role="button" href="#">Seguir leyendo</a>
+                        <a class="btn btn-info btn-sm" role="button" href="<?php echo RUTAENTRADA . '/' . $entrada->obtenerUrl() ?>">Seguir leyendo</a>
                     </div>
                     <hr class="mb-md-0">
                     <p style="text-align: right; margin-bottom: 0px;">
                         <small>
-                            <a href="#">
+<!--                            <a href="#">
                                 <?php
-                                echo $entrada->obtenerNombre();
+//                                echo $entrada->obtenerNombre();
                                 ?>
-                            </a>
+                            </a>-->
                             <?php
                             echo $entrada->obtenerFecha();
                             ?>
@@ -166,7 +166,7 @@ class EscritorEntradas {
                         </p>
                         <hr>
                         <div class="container-fluid p-auto">
-                            <a href="#">Seguir leyendo</a>
+                            <a href="<?php echo RUTAENTRADA . '/' . $entrada->obtenerUrl() ?>">Seguir leyendo</a>
                         </div>
                     </div>
                 </div>

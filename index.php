@@ -1,5 +1,28 @@
 <?php
 
+include_once 'app/config.inc.php';
+include_once 'app/Conexion.inc.php';
+
+include_once 'app/Usuario.inc.php';
+include_once 'app/Entrada.inc.php';
+include_once 'app/EntradaProg.inc.php';
+include_once 'app/EntradaImg.inc.php';
+include_once 'app/Comentario.inc.php';
+include_once 'app/ComentarioProg.inc.php';
+include_once 'app/ComentarioImg.inc.php';
+include_once 'app/LenguajeProg.inc.php';
+include_once 'app/Ubicacion.inc.php';
+
+include_once 'app/RepositorioUsuario.inc.php';
+include_once 'app/RepositorioEntrada.inc.php';
+include_once 'app/RepositorioEntradaProg.inc.php';
+include_once 'app/RepositorioEntradaImg.inc.php';
+include_once 'app/RepositorioComentario.inc.php';
+include_once 'app/RepositorioComentarioProg.inc.php';
+include_once 'app/RepositorioComentarioImg.inc.php';
+include_once 'app/RepositorioLenguajesProg.inc.php';
+include_once 'app/RepositorioUbicacion.inc.php';
+
 $componentesUrl = parse_url($_SERVER["REQUEST_URI"]);
 
 $ruta = $componentesUrl['path'];
@@ -39,11 +62,25 @@ if ($partesRuta[0] == 'BlogPersonal') {
             case 'repositorio':
                 $rutaElegida = 'vistas/repositorio.php';
                 break;
+            case 'rellenoDev':
+                $rutaElegida = 'tools/scriptRelleno.php';
+                break;
         }
     } else if (count($partesRuta) == 3) {
         if (($partesRuta[1] == 'registro-correcto') || ($partesRuta[1] == 'registroCorrecto')) {
             $nombre = $partesRuta[2];
             $rutaElegida = 'vistas/registroCorrecto.php';
+        }
+        if ($partesRuta[1] == 'entrada') {
+            $url = $partesRuta[2];
+            print $partesRuta[2];
+            Conexion::abrirConexion();
+            $entrada = RepositorioEntrada::obtenerEntradaPorUrl(Conexion::obtenerConexion(), $url);
+            
+            if ($entrada != null) {
+                $rutaElegida = 'vistas/entrada.php';
+            }
+            
         }
     }
 } 

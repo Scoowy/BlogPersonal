@@ -16,6 +16,7 @@ CREATE TABLE usuarios (
 CREATE TABLE entradas (
     id INT NOT NULL UNIQUE AUTO_INCREMENT,
     autor_id INT NOT NULL,
+    url VARCHAR(255) NOT NULL,
     titulo VARCHAR(255) NOT NULL,
     texto TEXT CHARACTER SET utf8 NOT NULL,
     fecha DATETIME NOT NULL,
@@ -58,6 +59,7 @@ CREATE TABLE lenguajeProg (
 CREATE TABLE entradasProgs (
     id INT NOT NULL UNIQUE AUTO_INCREMENT,
     autor_id INT NOT NULL,
+    url VARCHAR(255) NOT NULL,
     lenguaje_id INT NOT NULL,
     titulo VARCHAR(255) NOT NULL,
     texto TEXT CHARACTER SET utf8 NOT NULL,
@@ -106,6 +108,7 @@ CREATE TABLE ubicacion (
 CREATE TABLE entradasImg (
     id INT NOT NULL UNIQUE AUTO_INCREMENT,
     autor_id INT NOT NULL,
+    url VARCHAR(255) NOT NULL,
     titulo VARCHAR(255) NOT NULL,
     texto TEXT CHARACTER SET utf8 NOT NULL,
     imagen TEXT CHARACTER SET utf8 NOT NULL,
